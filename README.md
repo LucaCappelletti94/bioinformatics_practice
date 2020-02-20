@@ -5,7 +5,7 @@ Practice section of the UNIMI Bioinformatics course (2020 edition)
 All code, dependencies and data will be made available through this repository so that no time retrieving or debugging them shoud be lost.
 
 ### Friday 13/03/2020
-- Setup of Keras/Tensorflow work environment (hopefully in not more than 30 minutes everything should work)
+- Setup of Keras/Tensorflow work environment
 - Running example model of MLP of sinus function regression and casting regression task to binary classification task using threshold: showing how model does not generalize over unknown inputs, effect of different activations (using relu, sigmoid and linear) and different loss functions (mse, binary cross entropy)
 - Different available optimizers
 - Metrics to evaluate performance: when to use accuracy, balanced_accuracy, auroc and auprc.
@@ -24,5 +24,5 @@ All code, dependencies and data will be made available through this repository s
 - Concept of Multi-modal neural network and execution (without waiting for convergence)
 
 ### Friday 03/04/2020
-- How to prepare an experiment
-- How to deploy a model
+- How to setup an experiment (experimental setup, holdouts, balanced holdouts, chromosomal holdouts)
+- How to deploy a model (saving, testing and reloading a model)
