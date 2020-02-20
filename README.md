@@ -1,6 +1,9 @@
 # biormatics_practice
 Practice section of the UNIMI Bioinformatics course (2020 edition)
 
+## Where and when
+The lessons will be in LAMBDA laboratory (first floor of the computer science department), on friday, from 10:30 to 12:30.
+
 ## Tentative calendar
 All code, dependencies and data will be made available through this repository so that no time retrieving or debugging them shoud be lost.
 
@@ -17,12 +20,10 @@ All code, dependencies and data will be made available through this repository s
 - Measuring performance: why AUPRC is more informative than accuracy in unbalanced datasets.
 
 ### Friday 27/03/2020
-- CNN network example on MNIST
 - Retrieval of sequences (using existing pipeline)
 - One-hot encoding of nucleotides
-- Prediction of Active enhnacers vs Active promoters using MLP and usig CNN
-- Concept of Multi-modal neural network and execution (without waiting for convergence)
+- Prediction of Active enhnacers vs Active promoters using CNN
 
 ### Friday 03/04/2020
-- How to setup an experiment (experimental setup, holdouts, balanced holdouts, chromosomal holdouts)
-- How to deploy a model (saving, testing and reloading a model)
+- Prediction of Active enhancers vs Active promoters using MLP
+- Concept of Multi-modal neural network and execution
