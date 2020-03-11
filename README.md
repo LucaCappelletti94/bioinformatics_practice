@@ -70,3 +70,7 @@ The rise of automation:
 ### CGP Grey
 A video showing how artificial intelligence will be taking our jobs way before it becomes sentient:
 - [Humans need not apply](https://www.youtube.com/watch?v=7Pq-S557XQU)
+
+### Lex Fridman
+MIT professor that has philosophical talks with various experts.
+- [Lex Fridman](https://www.youtube.com/channel/UCSHZKyawb77ixDdsGog4iWA)
