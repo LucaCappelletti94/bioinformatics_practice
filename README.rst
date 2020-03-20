@@ -84,7 +84,7 @@ A small video playlist on neural networks:
 
 - `Neural networks demistified <https://www.youtube.com/watch?v=bxe2T-V8XRs>`_
 
-Kurtzgesagt
+Kurzgesagt
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The rise of automation:
 
