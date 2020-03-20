@@ -73,27 +73,27 @@ For those very interested in ML that cannot wait to learn more, you can check ou
 3Blue1Brown
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 This is a youtube channel with great animations which show what a neural network is:
-- [What is a neural network?](https://www.youtube.com/watch?v=aircAruvnKk&t=1s)
-- [Gradient Descent](https://www.youtube.com/watch?v=IHZwWFHWa-w)
-- [Backpropagation - high level](https://www.youtube.com/watch?v=Ilg3gGewQ5U)
-- [Backpropagation - low level](https://www.youtube.com/watch?v=tIeHLnjs5U8)
+- `What is a neural network?<https://www.youtube.com/watch?v=aircAruvnKk&t=1s>`_
+- `Gradient Descent<https://www.youtube.com/watch?v=IHZwWFHWa-w>`_
+- `Backpropagation - high level<https://www.youtube.com/watch?v=Ilg3gGewQ5U>`_
+- `Backpropagation - low level<https://www.youtube.com/watch?v=tIeHLnjs5U8>`_
 
 Tesla
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The presentation of how they cracked autonomous driving at Tesla:
-- [Tesla: autopilot day](https://www.youtube.com/watch?v=Ucp0TTmvqOE)
+- `Tesla: autopilot day<https://www.youtube.com/watch?v=Ucp0TTmvqOE>`_
 
 Welch labs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 A small video playlist on neural networks:
-- [Neural networks demistified](https://www.youtube.com/watch?v=bxe2T-V8XRs)
+- `Neural networks demistified<https://www.youtube.com/watch?v=bxe2T-V8XRs>`_
 
 ### Kurtzgesagt
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The rise of automation:
-- [The Rise of the Machines – Why Automation is Different this Time](https://www.youtube.com/watch?v=WSKi8HfcxEk&t=27s)
+- `The Rise of the Machines – Why Automation is Different this Time<https://www.youtube.com/watch?v=WSKi8HfcxEk&t=27s>`_
 
 CGP Grey
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 A video showing how artificial intelligence will be taking our jobs way before it becomes sentient:
-- [Humans need not apply](https://www.youtube.com/watch?v=7Pq-S557XQU)
+- `Humans need not apply<https://www.youtube.com/watch?v=7Pq-S557XQU>`_
