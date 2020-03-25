@@ -3,3 +3,7 @@ pandas
 sklearn
 barplots
 plot_keras_history
+encodeproject
+pybwtool
+crr_labels
+epigenomic_dataset
