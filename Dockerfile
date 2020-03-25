@@ -6,3 +6,4 @@ WORKDIR /home
 COPY . .
 RUN apt-get update -qyy && apt-get install htop byobu -qyy
 RUN python -m pip install -r requirements.txt
+RUN pip install ipywidgets && jupyter nbextension enable --py widgetsnbextension
