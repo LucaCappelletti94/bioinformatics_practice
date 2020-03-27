@@ -7,3 +7,5 @@ encodeproject
 pybwtool
 crr_labels
 epigenomic_dataset
+keras_tqdm
+keras_ding
