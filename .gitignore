@@ -4,3 +4,4 @@ genomes
 *.bigWig
 *.bed
 fantom_data
+*.pkl.gz
