@@ -102,4 +102,4 @@ Videos on the topics of biology we touched upon during the lessons but we could 
 
 - `An history of HELAS3 <https://www.youtube.com/watch?v=sXY6-wLesYY>`_
 - `More background on HELAS3, focusing on the origin <https://www.youtube.com/watch?v=22lGbAVWhro>`_
-- `What is gene regulation? <https://www.youtube.com/watch?v=h_1QLdtF8d0>_`
+- `What is gene regulation? <https://www.youtube.com/watch?v=h_1QLdtF8d0>`_
