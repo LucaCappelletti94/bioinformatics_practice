@@ -95,3 +95,11 @@ CGP Grey
 A video showing how artificial intelligence will be taking our jobs way before it becomes sentient:
 
 - `Humans need not apply <https://www.youtube.com/watch?v=7Pq-S557XQU>`_
+
+Some videos on biology
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Videos on the topics of biology we touched upon during the lessons but we could not properly explore in the available time:
+
+- `An history of HELAS3 <https://www.youtube.com/watch?v=sXY6-wLesYY>`_
+- `More background on HELAS3, focusing on the origin <https://www.youtube.com/watch?v=22lGbAVWhro>`_
+- `What is gene regulation? <https://www.youtube.com/watch?v=h_1QLdtF8d0>_`
