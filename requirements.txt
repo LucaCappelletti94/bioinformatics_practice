@@ -1,7 +1,7 @@
 tqdm
 numpy
 pandas
-sklearn
+scikit-learn
 barplots
 plot_keras_history
 encodeproject
