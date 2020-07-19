@@ -8,3 +8,4 @@ ray
 seaborn
 minepy
 boruta
+prince
