@@ -5,3 +5,4 @@ genomes
 *.bed
 fantom_data
 *.pkl.gz
+encodeproject_cache
