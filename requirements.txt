@@ -9,3 +9,6 @@ seaborn
 minepy
 boruta
 prince
+cmake
+multicoretsne
+silence_tensorflow>=1.1.1
