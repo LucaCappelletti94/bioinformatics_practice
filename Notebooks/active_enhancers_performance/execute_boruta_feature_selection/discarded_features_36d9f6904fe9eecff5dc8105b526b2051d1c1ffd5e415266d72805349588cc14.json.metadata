@@ -1,0 +1,24 @@
+{
+    "creation_time": 1618350419.9232392,
+    "creation_time_human": "2021-04-13 21:46:59",
+    "time_delta": 1636.4678747653961,
+    "time_delta_human": "27 minutes and 16 seconds",
+    "file_dump_time": 0.0003104209899902344,
+    "file_dump_time_human": "0 seconds",
+    "file_dump_size": 1958,
+    "file_dump_size_human": "2.0 kB",
+    "load_kwargs": {},
+    "dump_kwargs": {},
+    "function_name": "execute_boruta_feature_selection",
+    "function_file": "<ipython-input-3-6c1dd69a412f>:5",
+    "args_to_ignore": [
+        "X_train",
+        "y_train"
+    ],
+    "source": "@Cache(\n    cache_path=[\n        \"active_enhancers_performance/{function_name}/kept_features_{_hash}.json\",\n        \"active_enhancers_performance/{function_name}/discarded_features_{_hash}.json\"\n    ],\n    args_to_ignore=[\n        \"X_train\", \"y_train\"\n    ]\n)\ndef execute_boruta_feature_selection(\n    X_train: pd.DataFrame,\n    y_train: np.ndarray,\n    holdout_number: int,\n    max_iter: int = 100\n):\n    \"\"\"Returns tuple with list of kept features and list of discared features.\n    \n    Parameters\n    --------------------------\n    X_train: pd.DataFrame,\n        The data reserved for the input of the training of the Boruta model.\n    y_train: np.ndarray,\n        The data reserved for the output of the training of the Boruta model.\n    holdout_number: int,\n        The current holdout number.\n    max_iter: int = 100,\n        Number of iterations to run Boruta for.\n    \"\"\"\n    # Create the Boruta model\n    boruta_selector = BorutaPy(\n        # Defining the model that Boruta should use.\n        RandomForestClassifier(n_jobs=cpu_count(), class_weight='balanced_subsample', max_depth=5),\n        # We leave the number of estimators to be decided by Boruta\n        n_estimators='auto',\n        verbose=False,\n        alpha=0.05, # p_value\n        # In practice one would run at least 100-200 times,\n        # until all tentative features are exausted.\n        max_iter=max_iter, \n        random_state=42,\n    )\n    # Fit the Boruta model\n    boruta_selector.fit(X_train.values, y_train)\n    \n    # Get the kept features and discarded features\n    kept_features = list(X_train.columns[boruta_selector.support_])\n    discarded_features = list(X_train.columns[~boruta_selector.support_])\n    \n    # Filter out the unused featured.\n    return kept_features, discarded_features\n",
+    "backend_metadata": {},
+    "parameters": {
+        "max_iter": 100,
+        "holdout_number": 8
+    }
+}

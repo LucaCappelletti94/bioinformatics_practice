@@ -1,0 +1,26 @@
+{
+    "creation_time": 1618348403.1903946,
+    "creation_time_human": "2021-04-13 21:13:23",
+    "time_delta": 57.712788581848145,
+    "time_delta_human": "57 seconds",
+    "file_dump_time": 0.0002644062042236328,
+    "file_dump_time_human": "0 seconds",
+    "file_dump_size": 386,
+    "file_dump_size_human": "386 Bytes",
+    "load_kwargs": {},
+    "dump_kwargs": {},
+    "function_name": "train_perceptron",
+    "function_file": "<ipython-input-9-34a7081384a3>:7",
+    "args_to_ignore": [
+        "X_train",
+        "X_test",
+        "y_train",
+        "y_test"
+    ],
+    "source": "@Cache(\n    cache_path=\"active_enhancers_performance/{function_name}/{_hash}.json\",\n    args_to_ignore=[\n        \"X_train\", \"X_test\", \"y_train\", \"y_test\"\n    ]\n)\ndef train_perceptron(\n    X_train: np.ndarray,\n    X_test: np.ndarray,\n    y_train: np.ndarray,\n    y_test: np.ndarray,\n    holdout_number: int,\n    use_feature_selection: bool\n) -> Dict[str, float]:\n    \"\"\"Return performance of a Perceptron.\n    \n    Parameters\n    ----------------------\n    X_train: np.ndarray,\n        Data reserved for the input during training of the model.\n    X_test: np.ndarray,\n        Data reserved for the input during  test of the model.\n    y_train: np.ndarray,\n        Data reserved for the output during  training of the model.\n    y_test: np.ndarray,\n        Data reserved for the output during  test of the model.\n    holdout_number: int,\n        Number of the holdout.\n    use_feature_selection: bool,\n        Whether the model is trained using features that have\n        been selected with Boruta or not.\n        \n    Returns\n    ----------------------\n    Dictionary with the model perfomance.\n    \"\"\"\n    perceptron = Sequential([\n        Input((X_train.shape[1], )),\n        Dense(1, activation=\"sigmoid\")\n    ])\n    perceptron.compile(\n        loss=\"binary_crossentropy\",\n        optimizer=\"nadam\",\n        metrics=get_standard_binary_metrics()\n    )\n    perceptron.fit(\n        X_train, y_train,\n        validation_data=(X_test, y_test),\n        epochs=1000,\n        batch_size=1024,\n        verbose=False,\n        callbacks=[\n            EarlyStopping(\"loss\"),\n            # I have commented this because we do not need this loading bar\n            # when running the main experiment loop. When you experiment with\n            # the model structure you may want to enable this to get a feel\n            # of how the model is performing during the training.\n            #TqdmCallback(verbose=1)\n        ]\n    )\n    y_train_pred = perceptron.predict(X_train)\n    y_test_pred = perceptron.predict(X_test)\n    return evaluate_all_model_prediction(\n        y_train, y_train_pred, y_test, y_test_pred,\n        \"Perceptron\", holdout_number, use_feature_selection\n    )\n",
+    "backend_metadata": {},
+    "parameters": {
+        "holdout_number": 6,
+        "use_feature_selection": true
+    }
+}
