@@ -1,0 +1,48 @@
+{
+    "creation_time": 1618570901.395827,
+    "creation_time_human": "2021-04-16 11:01:41",
+    "time_delta": 39.63213491439819,
+    "time_delta_human": "39 seconds",
+    "file_dump_time": 0.004601001739501953,
+    "file_dump_time_human": "0 seconds",
+    "file_dump_size": 464,
+    "file_dump_size_human": "464 Bytes",
+    "load_kwargs": {},
+    "dump_kwargs": {},
+    "function_name": "train_cnn",
+    "function_file": "<ipython-input-64-5eb0da5f92f7>:24",
+    "args_to_ignore": [
+        "X_train",
+        "X_test",
+        "y_train",
+        "y_test",
+        "genome"
+    ],
+    "source": "@Cache(\n    cache_path=[\n        \"active_enhancers_performance/{function_name}/history_{_hash}.csv.xz\",\n        \"active_enhancers_performance/{function_name}/performance_{_hash}.csv.xz\",\n    ],\n    args_to_ignore=[\n        \"X_train\", \"X_test\", \"y_train\", \"y_test\", \"genome\"\n    ]\n)\ndef train_cnn(\n    X_train: pd.DataFrame,\n    X_test: pd.DataFrame,\n    y_train: np.ndarray,\n    y_test: np.ndarray,\n    genome: Genome,\n    batch_size: int,\n    holdout_number: int\n) -> Dict[str, float]:\n    \"\"\"Return performance of a FFNN.\n    \n    Parameters\n    ----------------------\n    X_train: pd.DataFrame,\n        Data reserved for the input during training of the model.\n    X_test: pd.DataFrame,\n        Data reserved for the input during  test of the model.\n    y_train: np.ndarray,\n        Data reserved for the output during  training of the model.\n    y_test: np.ndarray,\n        Data reserved for the output during  test of the model.\n    genome: Genome,\n        The genome object to use.\n    holdout_number: int,\n        Number of the holdout.\n        \n    Returns\n    ----------------------\n    Dictionary with the model perfomance.\n    \"\"\"\n    train_sequence = build_sequence(X_train, y_train, genome, batch_size=batch_size)\n    test_sequence = build_sequence(X_test, y_test, genome, batch_size=batch_size)\n    \n    cnn = Sequential([\n        Input((256, 4)),\n        Reshape((256, 4, 1)),\n        Conv2D(128, kernel_size=(8, 3), activation=\"relu\"),\n        Flatten(),\n        Dense(128, activation=\"relu\"),\n        Dense(1, activation=\"sigmoid\")\n    ])\n    cnn.compile(\n        loss=\"binary_crossentropy\",\n        optimizer=\"nadam\",\n        metrics=get_standard_binary_metrics()\n    )\n    \n    history = pd.DataFrame(cnn.fit(\n        train_sequence,\n        validation_data=test_sequence,\n        epochs=1000,\n        verbose=False,\n        callbacks=[\n            EarlyStopping(\"loss\"),\n            # I have commented this because we do not need this loading bar\n            # when running the main experiment loop. When you experiment with\n            # the model structure you may want to enable this to get a feel\n            # of how the model is performing during the training.\n            TqdmCallback(verbose=1)\n        ]\n    ).history)\n    \n    train_evaluation = dict(zip(cnn.metrics_names, cnn.evaluate(train_sequence)))\n    test_evaluation = dict(zip(cnn.metrics_names, cnn.evaluate(test_sequence)))\n    train_evaluation[\"run_type\"] = \"train\"\n    test_evaluation[\"run_type\"] = \"test\"\n    for evaluation in (train_evaluation, test_evaluation):\n        evaluation[\"model_name\"] = \"CNN\"\n        evaluation[\"holdout_number\"] = holdout_number\n    \n    evaluations = pd.DataFrame([\n        train_evaluation,\n        test_evaluation\n    ])\n    \n    return history, evaluations\n",
+    "backend_metadata": {
+        "type": "pandas",
+        "columns_types": {
+            "loss": "float64",
+            "accuracy": "float64",
+            "recall": "float64",
+            "precision": "float64",
+            "AUROC": "float64",
+            "AUPRC": "float64",
+            "f1_score": "float64",
+            "balanced_accuracy": "float64",
+            "specificity": "float64",
+            "miss_rate": "float64",
+            "fall_out": "float64",
+            "mcc": "float64",
+            "run_type": "str",
+            "model_name": "str",
+            "holdout_number": "int64"
+        },
+        "index_type": "int64",
+        "columns_names_type": "str"
+    },
+    "parameters": {
+        "batch_size": 1024,
+        "holdout_number": 1
+    }
+}
