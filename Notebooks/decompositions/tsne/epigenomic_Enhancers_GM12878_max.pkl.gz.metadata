@@ -1,0 +1,25 @@
+{
+    "creation_time": 1622710577.4595213,
+    "creation_time_human": "2021-06-03 08:56:17",
+    "time_delta": 2.1178529262542725,
+    "time_delta_human": "2 seconds",
+    "file_dump_time": 1.0828466415405273,
+    "file_dump_time_human": "1 second",
+    "file_dump_size": 1037637,
+    "file_dump_size_human": "1.0 MB",
+    "load_kwargs": {},
+    "dump_kwargs": {},
+    "function_name": "get_tsne_decomposition",
+    "function_file": "<ipython-input-9-f74e1e6ebbf1>:4",
+    "args_to_ignore": [
+        "X"
+    ],
+    "source": "@Cache(\n    cache_path=\"decompositions/tsne/{data_type}_{region}_{cell_line}_{metric}.pkl.gz\",\n    # We do not want to include the X variable into the hash\n    args_to_ignore=[\"X\"],\n)\ndef get_tsne_decomposition(\n    X: pd.DataFrame,\n    data_type: str,\n    region: str,\n    cell_line: str,\n    metric: str,\n)->pd.DataFrame:\n    \"\"\"Return the 2D TSNE decomposition of the given data.\"\"\"\n    # The import of the TSNECUDA is within the method and not\n    # outside because it is hard to install the package\n    from tsnecuda import TSNE\n    return pd.DataFrame(\n        TSNE(\n            # Better performance may be achieved with cosine distance,\n            # but currently TSNECUDA does not support other metrics.\n            # Expecially for the sequence data, cosine distances may be foundamental\n            # to get a semantically significant decomposition.\n            verbose=True\n        ).fit_transform(X.values),\n        index=X.index\n    )\n",
+    "backend_metadata": {},
+    "parameters": {
+        "data_type": "epigenomic",
+        "region": "Enhancers",
+        "cell_line": "GM12878",
+        "metric": "max"
+    }
+}
