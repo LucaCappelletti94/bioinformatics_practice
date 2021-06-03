@@ -4,5 +4,6 @@ genomes
 *.bigWig
 *.bed
 fantom_data
+fantom
 *.pkl.gz
 encodeproject_cache
