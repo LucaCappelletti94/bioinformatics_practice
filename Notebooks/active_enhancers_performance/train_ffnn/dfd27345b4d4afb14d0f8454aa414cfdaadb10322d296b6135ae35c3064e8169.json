@@ -1,1 +1,0 @@
-[{"AUPRC": 0.6030897279660539, "AUROC": 0.9010447190872805, "Accuracy": 0.9337323220352374, "run_type": "train", "model_name": "FFNN", "holdout_number": 7, "use_feature_selection": false}, {"AUPRC": 0.2703936493065417, "AUROC": 0.745878992178589, "Accuracy": 0.9051908035079402, "run_type": "test", "model_name": "FFNN", "holdout_number": 7, "use_feature_selection": false}]
