@@ -1,14 +1,12 @@
 scikit-learn
 barplots
 plot_keras_history
+extra_keras_metrics
 epigenomic_dataset>=1.1.7
 ucsc_genomes_downloader>=1.1.22
 keras_bed_sequence>=1.1.5
-ray
 seaborn
-minepy
 boruta
-prince
 cmake
 multicoretsne
 silence_tensorflow>=1.1.1

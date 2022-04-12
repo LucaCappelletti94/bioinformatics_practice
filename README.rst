@@ -1,10 +1,22 @@
 Bioinformatic practice laboratory
 ==========================================================================
-Practice section of the UNIMI Bioinformatics course (2020 edition)
+Practice section of the UNIMI Bioinformatics course (2022 edition)
 
 Where and when
-------------------------------------
-The lessons will be on Zoom, on Fridays, from 10:30 to 12:30.
+---------------------------------------
+The lessons will be on Zoom in the following dates:
+
++------------+------------------------------------------------+-------------+
+| Date       | Topics                                         | Time        |
++------------+------------------------------------------------+-------------+
+| 13/04/2022 | - Setting up your environment                  | 10.30-12:00 |
+|            | - Dataset retrieval, processing and analysis   |             |
+|            | - Course Project                               |             |
++------------+------------------------------------------------+-------------+
+| 21/04/2022 | Feed-forward and Convolutional neural networks | 10.30-13:00 |
++------------+------------------------------------------------+-------------+
+| 27/04/2022 | Multi-modal feed-forward neural networks       | 10.30-12:00 |
++------------+------------------------------------------------+-------------+
 
 Using your own laptop at the lessons
 ---------------------------------------
@@ -41,23 +53,6 @@ To test if your installation works properly you can launch a `Jupiter notebook s
   jupyter notebook
   
 And then run the `notebook available in the notebooks directory <https://github.com/LucaCappelletti94/bioinformatics_practice/blob/master/Notebooks/Testing%20that%20everything%20works.ipynb>`_ to see if everything works.
-
-Tentative calendar
------------------------------
-All code, dependencies and data will be made available through this repository so that no time retrieving or debugging them should be lost.
-
-+-------------------+-----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Day               | Arguments                                                                         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-+===================+===================================================================================+=============================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================+
-| Friday 27/03/2020 | Signal regression with MLP models. Hand-on examples of choosing hyper-parameters. | MLP are powerful models that can be applied to many tasks: one can be Regression. We gradually build an MLP model to learn the signal of an arbitrary function, exploring the impact of different activation functions, optimizers and other hyper-parameters. Then we compare the obtained model results with other easier models such as Decision Trees and Random forests and determine which one has the best performance using a Wilcoxon test. We conclude with some considerations on the generalization capabilities of these models on the signal. |
-+-------------------+-----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Friday 03/04/2020 | Data retrieval, elaboration and visualization.                                    | How to retrieve data from ENCODE, UCSC genome browser and other data sources. Elaboration of data (in the specific recently obtained CIS-regulatory regions data) with the imputation of NaN values and linear and non-linear correlation tests for automatic feature selection. Visualization of discrete features distributions using binning, usage of robust scalers, removal of outliers using quantiles, TSNE and PCA decompositions.                                                                                                                 |
-+-------------------+-----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Friday 10/04/2020 | FFNN for classification on Cis-regulatory regions.                                | Starting from a Perceptron, we gradually build a deep neural network for the classification task of Cis-regulatory regions for a single cell line on the epigenomic data. We evaluate the model performance using AUROC, AUPRC, accuracy and balanced accuracy. We compare the obtained model with simpler models such as Decision Trees and Random forests using a Wilcoxon test. We conclude with some notes on multi-task training.                                                                                                                      |
-+-------------------+-----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Friday 17/04/2020 | CNN for classification on Cis-regulatory regions.                                 | Starting from an MLP, we build a deep convolutional neural network for the classification task of Cis-regulatory regions for a single cell line on the sequence data. We evaluate the model performance using AUROC, AUPRC, accuracy and balanced accuracy. We compare the obtained model with a simpler MLP model using a Wilcoxon test. We conclude with some notes on multi-modal training.                                                                                                                                                              |
-+-------------------+-----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 Extras and supplementary material
 -----------------------------------------------
