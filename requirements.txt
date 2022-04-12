@@ -8,5 +8,4 @@ keras_bed_sequence>=1.1.5
 seaborn
 boruta
 cmake
-multicoretsne
 silence_tensorflow>=1.1.1
